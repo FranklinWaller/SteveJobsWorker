@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boilerplate</title>
+        <script src="build/index.js" charset="utf-8"></script>
+        <script>
+            PWA.Features.ServiceWorkerHijacker.init();
+        </script>
+    </head>
+    <body>
+        Code here.
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "steve-jobs-worker",
+  "version": "0.0.1",
+  "description": "Steve Jobs as a service worker",
+  "main": "index.js",
+  "scripts": {
+    "test": "none",
+    "start": "gulp server"
+  },
+  "keywords": [
+    "meister",
+    "demo",
+    "page"
+  ],
+  "author": "Triple",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "gulp": "^3.9.1",
+    "meister-gulp-browsersync-task": "^1.0.1",
+    "meister-gulp-webpack-tasks": "^1.0.6",
+    "meister-js-dev": "^3.1.0"
+  }
+}

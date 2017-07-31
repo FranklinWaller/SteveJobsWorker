@@ -1,5 +1,15 @@
 import 'babel-polyfill';
-import App from './src/js/App';
-import './src/scss/index.scss';
+import SteveJobsWorker from './src/js/SteveJobsWorker';
+import WebWorkerController from './src/js/WebWorkerController';
 
-export default App;
+const ENVIRONMENT_IS_WORKER = typeof importScripts === 'function';
+
+if (typeof window !== 'undefined') {
+    window.SteveJobsWorker = SteveJobsWorker;
+}
+
+if (ENVIRONMENT_IS_WORKER) {
+    WebWorkerController.run();
+}
+
+export default SteveJobsWorker;

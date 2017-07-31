@@ -1,3 +1,5 @@
+importScripts('build/index.js');
+
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
     '/',
@@ -6,8 +8,8 @@ var urlsToCache = [
 ];
 
 self.addEventListener('install', (event) => {
+    console.log(event);
     // Perform install steps
-
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(function (cache) {

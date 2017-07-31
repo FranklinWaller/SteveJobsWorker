@@ -19,6 +19,7 @@
     "gulp": "^3.9.1",
     "meister-gulp-browsersync-task": "^1.0.1",
     "meister-gulp-webpack-tasks": "^1.0.6",
-    "meister-js-dev": "^3.1.0"
+    "meister-js-dev": "^3.1.0",
+    "pouchdb": "^6.3.4"
   }
 }

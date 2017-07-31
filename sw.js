@@ -3,8 +3,8 @@ importScripts('build/index.js');
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
     '/',
-    '/styles/main.css',
-    '/script/main.js'
+    '/package.json',
+    '/README.md',
 ];
 
 self.addEventListener('install', (event) => {

@@ -2,8 +2,7 @@ import Cache from './Cache';
 
 export default class CacheStorage {
     async open(name) {
-        console.warn('NOT IMPLEMENTED CORRECTLY');
-        return new Cache();
+        return new Cache(name);
     }
 
     match() {

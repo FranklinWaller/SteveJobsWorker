@@ -31,8 +31,6 @@ export default class Cache {
             request: await saveableRequest.toString(),
             response: await saveableResponse.toString(),
         });
-
-        console.log(databaseResponse);
     }
 
     addAll(requests) {

@@ -1,9 +1,10 @@
+import PouchDB from 'pouchdb';
 import CacheStorage from './modules/CacheStorage';
 import InstallEvent from './modules/events/InstallEvent';
 import sleep from './utils/sleep';
 
 export default class WebWorkerController {
-    static run() {
+    static async run() {
         if (false && typeof caches !== 'undefined') return;
 
         self.__defineGetter__('caches', () => new CacheStorage());

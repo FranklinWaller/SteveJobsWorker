@@ -1,6 +1,7 @@
 import PouchDB from 'pouchdb';
 import SaveableRequest from './custom/SaveableRequest';
 import SaveableResponse from './custom/SaveableResponse';
+import upsert from '../utils/upsert';
 
 export default class Cache {
     constructor(name) {
@@ -26,11 +27,13 @@ export default class Cache {
         const saveableRequest = new SaveableRequest(request);
         const saveableResponse = new SaveableResponse(response);
 
-        const databaseResponse = await this._database.put({
+        const data = {
             _id: request.url,
             request: await saveableRequest.toString(),
             response: await saveableResponse.toString(),
-        });
+        };
+
+        const databaseResponse = await upsert(this._database, data);
     }
 
     addAll(requests) {
